@@ -22,7 +22,7 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="samouimet.com" class="active">About</a></li>
 						<li><a href="index.html#three">Projects</a></li>
 						<li><a href="assets/Sam-Ouimet-2020.pdf">Resume</a></li>
 						<li><a href="index.html#four">Contact</a></li>
@@ -32,7 +32,7 @@
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/samouimet1/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/samad4ms" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="samouimet@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto:samouimet@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -57,7 +57,7 @@
 										        <ul>
 										            <li>Supervised learning</li>
 										            <li>Logistic regression, SVM and XGboost</li>
-										            <li>Exponential Moving Average Feautures</li>
+										            <li>Exponential Moving Average Features</li>
 										            <li>Time series cross validation and grid search</li>
 										        </ul>
 										    </div>
@@ -76,9 +76,9 @@
 									<h4>Overview</h4>
 									<p>
 									
-										For this personal project, I web scraped several years of NFL game, vegas and team power ranking data to create a dataset that is unlike anything I was able to find searching various online resources. After cleaning the data and merging all of the dataframes into one, I created exponential moving average (EMA) features on some of the important numerical variables like power rank, team scores, and more. After researching sports betting/prediction models, I found EMA features were commonly used for such objectives due to the fact they capture past information (putting more weight on recent observations) which may reveal trends developing for a given team.<br><br> 
-										Next, I began modeling the data using SVM, logistic regression and XGboost algorithms and the binary target class of home team win or loss. In order to prevent data leakage, I performed cross validation and grid search of parameters using sklearn's TimeSeriesSplit and a custom grid search process I adapted from an online resource to preserve the chronology of the data.<br><br>
-										To my suprise, a tuned SVM model provided the best results on the test data (one full NFL season) with 64.8% accuracy and precision, 76.1% recall and 70% F1 score. <br><br>
+										For this personal project, I web scraped several years of NFL game, vegas odds, and team power ranking data to create a dataset that is unlike anything I was able to find online. After cleaning the data and merging all of the dataframes into one, I created exponential moving average (EMA) features for some of the important numerical variables like power rank and team scores. Through research, I found EMA features to be commonly used for such objectives since they put more weight on recent observations.<br><br> 
+										Next, I began modeling the data using SVM, logistic regression and XGboost to predict the binary target class of home team win or loss. In order to prevent data leakage, I performed cross-validation and a grid search of parameters using sklearn's TimeSeriesSplit and a custom grid search process I adapted from an online resource to preserve the chronology of the data.<br><br>
+										To my surprise, a tuned SVM model provided the best results on the test data (one full NFL season) with 64.8% accuracy and precision, 76.1% recall, and 70% F1 score. <br><br>
 
 										 Please see my <a href='https://github.com/samad4ms/NFL-Individual-game-predictor'>GitHub repository</a> for the project files. 
 

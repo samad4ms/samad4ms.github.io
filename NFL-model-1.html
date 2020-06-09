@@ -22,7 +22,7 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="samouimet.com" class="active">About</a></li>
 						<li><a href="index.html#three">Projects</a></li>
 						<li><a href="assets/Sam-Ouimet-2020.pdf">Resume</a></li>
 						<li><a href="index.html#four">Contact</a></li>
@@ -32,7 +32,7 @@
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/samouimet1/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/samad4ms" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="samouimet@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto:samouimet@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -57,7 +57,7 @@
 										        <ul>
 										            <li>Linear Regression</li>
 										            <li>Polynomial Regression</li>
-										            <li>Web-scraping</li>
+										            <li>Web scraping</li>
 										        </ul>
 										    </div>
 										    <div class="column", align="center">
@@ -76,9 +76,9 @@
 									<h4>Overview</h4>
 									<p>
 									
-										As my first regression project at <a href='https://www.thisismetis.com/data-science-bootcamps'>Metis</a>, I decided to build a linear regression model to predict an NFL team's next year win total. In order to accomplish this, I first needed to web-scrape as many years of NFL team based statistics as I could from websites like pro-football-reference.com and NFL.com. Since 2002 was the first year in which the NFL added its 32nd team and current team total, I decided to scrape data from the 2002-2018.<br><br>After collecting and cleaning the data, I began performing EDA and feature engineering. Some of the engineered features that improved the model performance were net points, points per minute of offense, and first and third down conversion rate. As you can see in the presentation below, the net points metric, or the difference between a teams' full season points scored total minus points allowed, is highly correlated to team win totals.
+										As my first regression project at <a href='https://www.thisismetis.com/data-science-bootcamps'>Metis</a>, I decided to build a linear regression model to predict an NFL team's next year win total. In order to accomplish this, I first needed to web scrape as many years of NFL team based statistics as I could from websites like pro-football-reference.com and NFL.com. Since 2002 was the first year in which the NFL added its 32nd team and current team total, I decided to scrape data from the 2002-2018.<br><br>After collecting and cleaning the data, I began performing EDA and feature engineering. Some of the engineered features that improved the model performance were net points, points per minute of offense, and a combined first and third down conversion rate. As you can see in the presentation below, the net points metric, or the difference between a teams' points scored and points allowed, is highly correlated to team win totals.
 										<br><br>
-										Next, I began modeling using the sklearn and statsmodel linear regression module. The best linear regression model used L2 regulization and achieved an r squared of 79 percent and an MAE of 1.12 wins on the test set. However, I made the mistake of using KFold crossvalidation which shuffled the dataset and surely caused a degree of data leakage. If I were to do this stage of the project again, I would followed a similar time series cross validation that was used in my <a href='nfl_advanced.html'>second NFL project</a>  to preserve the chronology of the data and not leak information to the model.<br><br>Please see the presentation on this poject I gave to my peers at Metis and the project files in my <a href='https://github.com/samad4ms/NFL-Team-Wins-Proj2'>GitHub repository</a>.
+										Next, I began modeling using the sklearn and statsmodel linear regression modules. The best linear regression model included L2 regulation and achieved an r squared of 79% and an MAE of 1.12 wins on the test set. However, I made the mistake of using KFold cross-validation which shuffled the dataset and surely caused a degree of data leakage. If I were to do this stage of the project again, I would follow a similar time series cross-validation technique that was used in my <a href='nfl_advanced.html'>second NFL project</a>  to preserve the chronology of the data and not leak information to the model.<br><br>Please see the presentation on this project I gave to my peers at Metis and the project files in my <a href='https://github.com/samad4ms/NFL-Team-Wins-Proj2'>GitHub repository</a>.<br><br>
 
 										<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRzrfVw8DfE4nb92Nhu0JPgrOfWH3y4MUOBX7WPtXwWmnu-lOoxb6QLeoWUQ7F7OWa5y-w68nYRswzA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 <br><br>

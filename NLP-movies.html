@@ -22,7 +22,7 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="samouimet.com" class="active">About</a></li>
 						<li><a href="index.html#three">Projects</a></li>
 						<li><a href="assets/Sam-Ouimet-2020.pdf">Resume</a></li>
 						<li><a href="index.html#four">Contact</a></li>
@@ -66,7 +66,7 @@
 										        <ul>
 										            <li>NLTK</li>
 										            <li>TfidfVectorizer</li>
-										            <li>Beautiful Soup (web-scraping)</li>
+										            <li>Beautiful Soup</li>
 										            <li>Pandas</li>
 										            <li>Plotly</li>
 										        </ul>
@@ -76,15 +76,17 @@
 									
 									<h4>Purpose</h4>
 									<p>
-										For this project I wanted to create a tool that could be used both by movie production companies to expidite the process of identifying promising movie scripts and by users to generate movie recommendations based on similar topics found in different scripts.
+										For this project, I wanted to create a tool that could be used both by movie production companies to expedite the process of identifying promising scripts and by users to generate movie recommendations based on similar topics found in different scripts.
 
 									<h4>Process</h4>
 									<p>
-										I started by scraping 70 full length movie scripts from www.imsdb.com and cleaning them. I then split each script into 100 chunks because the full length scripts would be too large to process effectively at once. I wrote a custom script "chunk" tokenizer function that incorporated word lemmitization, removed a bunch of stop words, and used part of speech tagging to keep only the most descriptive words; verbs and adjectives.<br><br>
-										Next, I used the tokenizer function with the TFIDF Vectorizer to create the initial 'document-word' vectors. These vectors represent all the words (after pre-processing) that are in each scene. The doc-word vectors are then condesned into just 11 topics (attributes) through the use of non-matrix factorization (NMF). The result of this process was the creation of 'topic-word' and 'document-topic' vectors. The former represents the most common words in each topic. The topics included action, humor, fantasy, etc. and were comprised of words that are often associated with such topics. The doc-topic vectors represent how much of each topic is present in each scene (document).<br><br>
-										In order to get total topic scores for each movie as opposed to just scores for each scene in each move, I used a simple pandas groupby on the doc-topic dataframe to select all scenes from the same movie and then added the scores from each scene. Since each movie had 100 chunks, this was a faily simple way to generate cummulaive topic scores for each movie.  
+										I started by scraping 70 full-length movie scripts from www.imsdb.com and cleaning and then splitting them each into 100 chunks. I decided to split the scripts this way because the full-length documents contained too many words to be analyzed effectively at once. In addition to splitting the scripts, I  wrote a pre-processing function that incorporated word lemmatization, stop word removal, and part of speech tagging.
 										<br><br>
-										Now with each movie containing the scores of clearly defined topics (movie-topic vectors), the last step was to use this information as the backbone of simple movie recommendation system. To create this, I calculated the cosine similarities of all of the movie-topic vectors and then created a function to output the four most similar movies to the given input movie. For example if the input movie was 2019's 'Joker', then the function would output the four most similar movies of "Scream", "Insidious", "The Book of Eli", and "Get-Out."
+										These vectors represent all of the words (after pre-processing) that are in each chunk of each script. The document-word vectors are then condensed into just 11 topics (attributes) through the use of non-matrix factorization (NMF). The result was the creation of 'topic-word' and 'document-topic' vectors. The former represents the most common words in each topic. A few of the topics included action, comedy, horror, and fantasy. The doc-topic vectors quantitatively represent how much of each topic is present in each chuck (document).
+										<br><br>
+										In order to get the total topic scores for each movie, as opposed to just scores for each scene, I used a simple pandas groupby on the doc-topic dataframe to select all scenes from the same movie and then added the scores from each scene. Since each movie had 100 chunks, this was a fairly simple way to generate cumulative topic scores for each movie.
+										<br><br>
+										Now, with each movie containing the scores of clearly defined topics (movie-topic vectors), the last step was to use this information as the backbone of a simple movie recommendation system. To create this, I calculated the cosine similarities of all of the movie-topic vectors and then created a function to output the four most similar movies to the given input movie name. For example, if the input movie was 2019's 'Joker', then the function would output the four most similar movies of "Scream", "Insidious", "The Book of Eli", and "Get-Out."
 <br><br>
 										Please see the presentation I gave about this project below (required to be breif) and the <a href='https://github.com/samad4ms/Movie-Script-NLP-Recommender'>GitHub repository</a> for the project files. 
 <br><br>
